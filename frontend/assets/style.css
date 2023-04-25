@@ -1,0 +1,149 @@
+body {
+  background-image: url("sunny.jpg");
+  margin: 0;
+}
+
+.title_image {
+  display: flex;
+  flex-direction: row;
+}
+
+.title_text {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.title_row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 30px;
+  gap: 5px;
+  width: 400px;
+  justify-content: center;
+}
+
+.location {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  font-family: sans-serif;
+  width: 300px;
+}
+
+.date_id {
+  display: flex;
+  flex-direction: row;
+}
+
+.date_format {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  font-family: sans-serif;
+}
+
+.title_location_row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.bg_title {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  height: 40px;
+}
+
+.card_size {
+  background: rgba(255, 255, 255, 0.3);
+  width: 300px;
+  height: 160px;
+}
+
+.value_cards_column {
+  display: flex;
+  flex-direction: row;
+  column-gap: 15px;
+}
+
+.numeric_values_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.tabs_container_width {
+  width: 605px;
+}
+
+.tabs_container {
+  background: rgba(255, 255, 255, 0.3);
+  width: 930px;
+  height: 35px;
+  border-bottom: 1px solid #ffffff;
+}
+
+.display_tabs_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card_title {
+  display: flex;
+  flex-direction: row;
+  color: #ffbf00;
+  font-size: 25px;
+  font-family: sans-serif;
+  margin-top: 35px;
+}
+
+.image {
+  display: flex;
+  flex-direction: row;
+}
+
+.numeric_value {
+  display: flex;
+  flex-direction: row;
+  color: #FFFFFF;
+  font-size: 50px;
+}
+
+.card_row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: -50px;
+}
+
+.header_card_row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chart_size {
+  background: rgba(255, 255, 255, 0.3);
+  width: 930px;
+  height: 450px;
+}
+
+.chart_row_center {
+  display: flex;
+  justify-content: center;
+}
+
+
+
