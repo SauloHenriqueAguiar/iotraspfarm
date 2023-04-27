@@ -18,7 +18,7 @@ app = dash.Dash(__name__)
 # server = app.server
 
 # carrega dados do banco de dados
-database = r"C:\Users\saulo\PrevDailyWeakly\backend\databaseedge\db\bancosensor.db"
+database = r"/home/saulo/iotraspfarm/backend/databaseedge/db/bancosensor.db"
 conn = sqlite3.connect(database)
 cursor = conn.cursor()
 cursor.execute("SELECT * FROM SensorValores")
@@ -104,7 +104,7 @@ app.layout = html.Div(
     [Input('graph-update', 'n_intervals')]
 )
 def update_graph_scatter(n):
-    database = r"C:\Users\saulo\PrevDailyWeakly\backend\databaseedge\db\bancosensor.db"
+    database = r"/home/saulo/iotraspfarm/backend/databaseedge/db/bancosensor.db"
     conn = sqlite3.connect(database)
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM SensorValores")
@@ -117,7 +117,7 @@ def update_graph_scatter(n):
     get_Time = df['Time'].tail(20)
 
     # pegar dados de do banco C:\Users\saulo\PrevDailyWeakly\databaseedge\db\bancosensor.db da tabela TablePrevDiaSema
-    databasepHpred = r"C:\Users\saulo\PrevDailyWeakly\backend\databaseedge\db\bancosensor.db"
+    databasepHpred = r"/home/saulo/iotraspfarm/backend/databaseedge/db/bancosensor.db"
     conn = sqlite3.connect(databasepHpred)
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM PredictValues")
@@ -171,7 +171,7 @@ def update_graph_scatter(n):
     [Input('graph-update', 'n_intervals')]
 )
 def update_temp(n):
-    database = r"C:\Users\saulo\PrevDailyWeakly\backend\databaseedge\db\bancosensor.db"
+    database = r"/home/saulo/iotraspfarm/backend/databaseedge/db/bancosensor.db"
     conn = sqlite3.connect(database)
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM SensorValores")
@@ -245,7 +245,7 @@ def update_temp(n):
     [Input('graph-update', 'n_intervals')]
 )
 def update_humi(n):
-    database = r"C:\Users\saulo\PrevDailyWeakly\backend\databaseedge\db\bancosensor.db"
+    database = r"/home/saulo/iotraspfarm/backend/databaseedge/db/bancosensor.db"
     conn = sqlite3.connect(database)
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM SensorValores")
@@ -320,7 +320,7 @@ def update_humi(n):
 )
 def update_prev_diaria_semanal(n):
 
-    conn = sqlite3.connect(r'C:\Users\saulo\PrevDailyWeakly\backend\databaseedge\db\bancosensor.db')
+    conn = sqlite3.connect(r'/home/saulo/iotraspfarm/backend/databaseedge/db/bancosensor.db')
     cursor = conn.cursor()
 
     # Executar consulta SQL para recuperar os dados da tabela

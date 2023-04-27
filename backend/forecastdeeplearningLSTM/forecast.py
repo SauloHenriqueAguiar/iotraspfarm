@@ -38,7 +38,7 @@ def previsao():
     live_data = np.arange(seq_len[0]-1)
 
     # carrega dados do banco de dados
-    database = r"C:\Users\saulo\PrevDailyWeakly\backend\databaseedge\db\bancosensor.db"
+    database = r"/home/saulo/iotraspfarm/backend/databaseedge/db/bancosensor.db"
     conn = sqlite3.connect(database)
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM SensorValores")

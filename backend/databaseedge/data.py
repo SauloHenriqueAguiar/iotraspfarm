@@ -11,9 +11,9 @@ import json
 
 if __name__ == '__main__':
 
-    PORT = 'COM4'
-    ser = serial.Serial('COM4', 115200, timeout=2)
-    # ser.flush()
+    
+    PORT = '/dev/ttyUSB0'
+    ser = serial.Serial('/dev/ttyUSB0', 115200, timeout=2)
 
     dataatualArray = []
     datacompatualArray = []
@@ -71,7 +71,7 @@ while True:
                       
 
 
-    database = r"C:\Users\saulo\PrevDailyWeakly\backend\databaseedge\db\bancosensor.db"
+    database = r"/home/saulo/iotraspfarm/backend/databaseedge/db/bancosensor.db"
     conn = sqlite3.connect(database)
     '''conn = mysql.connect(host='localhost',
                   database='banco_sensor',

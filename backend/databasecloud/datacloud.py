@@ -13,7 +13,7 @@ firebase = firebase.FirebaseApplication(
 
 def update_firebase():
     # tabela 1 do banco
-    database = r"C:\Users\saulo\PrevDailyWeakly\backend\databaseedge\db\bancosensor.db"
+    database = r"/home/saulo/iotraspfarm/backend/databaseedge/db/bancosensor.db"
     conn = sqlite3.connect(database)
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM SensorValores")
@@ -21,6 +21,10 @@ def update_firebase():
     df = pd.DataFrame(rows, columns=[
                       'Time', 'Data', 'Dia', 'Semana', 'Mes', 'Humidity', 'Temperature', 'pH', 'pHpred'])
     conn.close()
+
+    if df.empty or 'Time' not in df.columns:
+        # O dataframe está vazio ou não tem coluna 'Time'
+        return
 
     get_time = df['Time'].tail(1).iloc[0]
     get_humi = df['Humidity'].tail(1).iloc[0]
@@ -30,7 +34,7 @@ def update_firebase():
     get_mes = df['Mes'].tail(1).iloc[0]
 
     # tabela 2 do banco
-    conn = sqlite3.connect(r'C:\Users\saulo\PrevDailyWeakly\backend\databaseedge\db\bancosensor.db')
+    conn = sqlite3.connect(r'/home/saulo/iotraspfarm/backend/databaseedge/db/bancosensor.db')
     cursor = conn.cursor()
 
     # Executar consulta SQL para recuperar os dados da tabela
@@ -74,3 +78,4 @@ def update_firebase():
 while True:
     update_firebase()
     time.sleep(20)
+
