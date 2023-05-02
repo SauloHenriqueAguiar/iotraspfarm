@@ -22,9 +22,9 @@ def update_firebase():
                       'Time', 'Data', 'Dia', 'Semana', 'Mes', 'Humidity', 'Temperature', 'pH', 'pHpred'])
     conn.close()
 
-    if df.empty or 'Time' not in df.columns:
-        # O dataframe está vazio ou não tem coluna 'Time'
-        return
+    if df.empty or not all(col in df.columns for col in ['Time', 'Humidity', 'Temperature', 'pH', 'Dia', 'Mes']):
+        # O dataframe está vazio ou não tem todas as colunas necessárias
+     return
 
     get_time = df['Time'].tail(1).iloc[0]
     get_humi = df['Humidity'].tail(1).iloc[0]
@@ -77,5 +77,5 @@ def update_firebase():
 
 while True:
     update_firebase()
-    time.sleep(20)
+    time.sleep(30)
 
